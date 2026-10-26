@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="MoonBite Menu: an interactive KryptNet cybersecurity training demonstration. No real payments.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="theme-color" content="#142e29"><title>MoonBite Menu · Pay with confidence</title>
+  <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+  <div class="training">◈ &nbsp; KryptNet Cybersecurity Training Simulation — No Real Payments</div>
+  <header class="wrap"><a class="brand" href="./" aria-label="MoonBite Menu home"><span class="moon">☾</span> MoonBite<span class="brand-sub">MENU</span></a><a class="header-link" href="#learn">Spot the QR scam <span aria-hidden="true">↗</span></a></header>
+  <main class="wrap">
+    <section class="hero">
+      <div><p class="eyebrow">GOOD FOOD. SMARTER PAYMENTS.</p><h1>A lovely meal.<br>A safer way<br>to <em>settle up.</em></h1><p class="intro">Thanks for dining with MoonBite. Choose a payment method below, and take a moment to check who you’re paying.</p><div class="table-tag"><span class="status-dot"></span> Table 08 <span> / </span> Dine-in <span> / </span> Demo order MB-108</div></div>
+      <div class="food-scene"><img src="assets/meal.svg" alt="Illustration of a freshly prepared rice bowl with grilled vegetables and greens"><div class="food-caption"><span>MADE TO BE SAVOURED</span><strong>A little moonlight.<br>A lot of flavour.</strong></div><span class="round-label">FRESH<br>EVERY DAY</span></div>
+    </section>
+    <section class="checkout" aria-labelledby="payment-title"><div class="section-heading"><div><p class="eyebrow">YOUR LAST COURSE</p><h2 id="payment-title">How would you like to pay?</h2></div><div class="total"><span>Demo bill total</span><strong>GH₵ 185.00</strong></div></div><p class="muted">Explore a simulated checkout. No account, PIN, or card details required.</p>
+      <div id="scenario-banner" class="scenario-banner" role="status" hidden></div>
+      <div class="payment-grid">
+        <article class="payment-card"><div class="payment-icon mtn">MoMo</div><span class="method-type">MOBILE MONEY</span><h3>MTN Mobile Money</h3><p>024 000 1234</p><span class="recipient">Demo merchant · MoonBite Menu</span><button data-method="mtn">Click Here to Pay <span aria-hidden="true">↗</span></button></article>
+        <article class="payment-card"><div class="payment-icon telecel">telecel</div><span class="method-type">MOBILE WALLET</span><h3>Telecel Cash</h3><p>020 000 5678</p><span class="recipient">Demo merchant · MoonBite Menu</span><button data-method="telecel">Click Here to Pay <span aria-hidden="true">↗</span></button></article>
+        <article class="payment-card"><div class="payment-icon zelle">Zelle®</div><span class="method-type">DEMO TRANSFER</span><h3>Zelle</h3><p>moonbite@example.invalid</p><span class="recipient">Fictional demonstration account</span><button data-method="zelle">Click Here to Pay <span aria-hidden="true">↗</span></button></article>
+        <article class="payment-card"><div class="payment-icon cards"><b>VISA</b><span class="mastercard" aria-label="Mastercard">●●</span></div><span class="method-type">CREDIT / DEBIT</span><h3>Pay by card</h3><p>Visa &amp; Mastercard</p><span class="recipient">Preset demo card · •••• 4242</span><button data-method="card">Click Here to Pay <span aria-hidden="true">↗</span></button></article>
+      </div><div class="safe-note">♧ <span><strong>Practice with peace of mind.</strong> All accounts and transactions on this page are fictional training examples.</span></div>
+    </section>
+    <section id="learn" class="learn"><div class="learn-intro"><p class="eyebrow">PAUSE. CHECK. THEN PAY.</p><h2>The QR code looks right.<br>Does the recipient?</h2><p>A replacement QR sticker can take a diner to an unauthorized recipient. A familiar logo or a padlock alone doesn’t prove who receives the money.</p><p>Use the two scenarios to see the difference. Both stay inside this training website.</p></div><div class="comparison"><div class="comparison-row"><span class="badge good">EXPECTED MERCHANT</span><h3>MoonBite Menu</h3><p>MTN: 024 000 1234 · Telecel: 020 000 5678</p><a class="scenario-link" href="?scenario=trusted#payment-title">Open expected checkout ↗</a></div><div class="comparison-row fraudulent"><span class="badge bad">SIMULATED UNAUTHORIZED RECIPIENT</span><h3>Moonlight Collections — DEMO</h3><p>Recipient ID: UNAUTHORIZED-DEMO · Not MoonBite Menu</p><a class="scenario-link" href="?scenario=redirected#payment-title">Demonstrate a replaced QR code ↗</a></div></div></section>
+    <section class="takeaway"><h2>Three checks before you pay.</h2><div><p><b>01 / Inspect the QR</b>Look for stickers covering the restaurant’s original code.</p><p><b>02 / Read the address</b>Confirm the website with staff. A secure connection alone is not proof.</p><p><b>03 / Match the merchant</b>Check the recipient’s name and number. Stop and ask staff if they differ.</p></div></section>
+    <section class="share"><div><p class="eyebrow">TAKE THE DEMO TO YOUR PHONE</p><h2>Scan, explore, learn.</h2><p>Use this permanent HTTPS link as the destination in your webinar QR code.</p><a href="https://kofi4me.github.io/moonbite/">https://kofi4me.github.io/moonbite/</a></div><button id="copy-url" class="outline">Copy demo URL ↗</button><p id="copy-status" role="status"></p></section>
+  </main><footer class="wrap"><span class="brand">☾ MoonBite Menu</span><p>A fictional restaurant. A real lesson in staying safe.</p><span>Training by <strong>KryptNet</strong></span></footer>
+  <dialog id="payment-dialog" aria-labelledby="dialog-title"><button class="close" aria-label="Close payment simulation">×</button><div id="dialog-content"></div></dialog>
+</body></html>
