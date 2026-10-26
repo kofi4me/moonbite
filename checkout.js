@@ -7,6 +7,11 @@ const methods = {
 const params = new URLSearchParams(location.search);
 const method = Object.hasOwn(methods, params.get('method')) ? methods[params.get('method')] : methods.mtn;
 const redirected = params.get('scenario') === 'redirected';
+if (params.get('method') === 'card') {
+  document.body.classList.add('card-checkout');
+  document.querySelector('#card-preview').hidden = false;
+  document.querySelector('button[type=submit]').textContent = 'Pay Now — Training Only';
+}
 document.querySelector('#method-title').textContent = method.name;
 document.querySelector('#recipient').textContent = redirected ? 'Moonlight Collections — DEMO' : 'MoonBite Menu (fictional)';
 document.querySelector('#account').textContent = redirected ? 'UNAUTHORIZED-DEMO (fictional)' : method.account;
@@ -24,4 +29,5 @@ document.querySelector('#demo-form').addEventListener('submit', event => {
   const confirmation = document.querySelector('#confirmation'); confirmation.hidden = false; confirmation.focus();
 });
 document.querySelector('#nickname').addEventListener('input', event => event.target.setCustomValidity(''));
+
 
