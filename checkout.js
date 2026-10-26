@@ -10,7 +10,7 @@ const redirected = params.get('scenario') === 'redirected';
 document.querySelector('#method-title').textContent = method.name;
 document.querySelector('#recipient').textContent = redirected ? 'Moonlight Collections — DEMO' : 'MoonBite Menu (fictional)';
 document.querySelector('#account').textContent = redirected ? 'UNAUTHORIZED-DEMO (fictional)' : method.account;
-document.querySelector('#preset-account').textContent = method.preset;
+document.querySelector('#preset-account').textContent = params.get('method') === 'card' ? 'Preset training card •••• 4242' : 'Training mode · No payment account is needed';
 const notice = document.querySelector('#recipient-notice');
 notice.textContent = redirected ? 'Recipient mismatch: this is not MoonBite Menu. In a real checkout, stop and ask restaurant staff. Continue only to explore the training outcome.' : 'The recipient matches the expected fictional merchant.';
 if (redirected) notice.className = 'warning';
@@ -18,9 +18,10 @@ document.querySelector('#demo-form').addEventListener('submit', event => {
   event.preventDefault();
   const nickname = document.querySelector('#nickname').value.trim();
   if (!nickname) { document.querySelector('#nickname').setCustomValidity('Enter a fictional nickname.'); document.querySelector('#nickname').reportValidity(); return; }
-  document.querySelector('#confirmation-message').textContent = `${nickname}, your ${method.name} exercise for ${document.querySelector('#table').value} is complete. Demo amount: GH₵ 185.00.`;
+  document.querySelector('#confirmation-message').textContent = `${nickname}, your ${method.name} exercise for ${document.querySelector('#table').value} is complete. Entered amount: GH₵ ${Number(document.querySelector('#amount').value).toFixed(2)}. Training reference: ${document.querySelector('#reference').value.trim()}.`;
   document.querySelector('#confirmation-lesson').textContent = redirected ? 'This exercise selected an unauthorized recipient. A replaced QR code can redirect a payment. Always verify the merchant with staff before paying.' : 'You checked the expected merchant. Always confirm the recipient before authorizing a real payment.';
   event.target.reset(); event.target.hidden = true;
   const confirmation = document.querySelector('#confirmation'); confirmation.hidden = false; confirmation.focus();
 });
 document.querySelector('#nickname').addEventListener('input', event => event.target.setCustomValidity(''));
+
