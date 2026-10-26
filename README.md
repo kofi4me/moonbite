@@ -17,3 +17,7 @@ Encode either URL in a QR code for a smartphone demonstration. The redirected sc
 
 ## Deployment
 Push to main triggers the included GitHub Pages Actions workflow. Repository Settings > Pages must use GitHub Actions if automatic enablement is unavailable. All assets are local and require no build step or external dependencies.
+
+## Participant demo entry
+Each payment button opens checkout.html with the selected method and QR scenario. Participants enter a fictional nickname, choose a table, use a preset fictional account, and acknowledge the simulation. Form data is handled only in page memory, never sent or persisted. No financial credentials or card details are requested.
+
